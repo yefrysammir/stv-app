@@ -3,8 +3,8 @@
   "short_name": "STV",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#6A5ACD",
+  "background_color": "#6a5acd",
+  "theme_color": "#6a5acd",
   "icons": [
     {
       "src": "https://iili.io/FbCMMdl.png",
