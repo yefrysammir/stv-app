@@ -246,7 +246,26 @@ justify-content: center;
         </button>
       </div>
     </div>
-<div class="anuncio"><p>Powered by <img class="profile" src="https://th.bing.com/th/id/OIG2.Ls14.mrVPhRAUIQyj_Y8?dpr=3&pid=ImgDetMain" alt="Sam"><a href="https://instagram.com/yefrysammir/">@yefrysammir</a></p></div>
+    <script>
+function openInstagram() {
+  // 1) Intentar abrir la app con el esquema nativo
+  window.location = "instagram://user?username=yefrysammir";
+
+  // 2) Si no se abre (porque no tiene la app), después de 1.5 s lo manda a la tienda
+  setTimeout(function () {
+    // iOS App Store
+    if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      window.location = "https://apps.apple.com/app/instagram/id389801252";
+    }
+    // Android Play Store
+    else if (/Android/.test(navigator.userAgent)) {
+      window.location = "https://play.google.com/store/apps/details?id=com.instagram.android";
+    }
+  }, 1500);
+}
+</script>
+    
+<div class="anuncio"><p>Powered by</p><img class="profile" src="https://th.bing.com/th/id/OIG2.Ls14.mrVPhRAUIQyj_Y8?dpr=3&pid=ImgDetMain" alt="Sam"><a href="javascript:openInstagram()">@yefrysammir</a></div>
   </main>
 
   <footer>
