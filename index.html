@@ -32,6 +32,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      text-decoration: none;
     }
 
 
@@ -204,6 +205,9 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+.anuncio a {
+color: coral;
+}
 .anuncio img.profile {
     width: 15px;
     height: 15px;
@@ -248,20 +252,24 @@ justify-content: center;
     </div>
     <script>
 function openInstagram() {
-  // 1) Intentar abrir la app con el esquema nativo
-  window.location = "instagram://user?username=yefrysammir";
+  // Intentar abrir la app
+  window.location = "instagram://user?username=sam_";
 
-  // 2) Si no se abre (porque no tiene la app), después de 1.5 s lo manda a la tienda
-  setTimeout(function () {
-    // iOS App Store
+  // Programamos el fallback
+  const fallback = setTimeout(function () {
     if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
       window.location = "https://apps.apple.com/app/instagram/id389801252";
-    }
-    // Android Play Store
-    else if (/Android/.test(navigator.userAgent)) {
+    } else if (/Android/.test(navigator.userAgent)) {
       window.location = "https://play.google.com/store/apps/details?id=com.instagram.android";
     }
   }, 1500);
+
+  // Si la página pierde visibilidad (porque se abrió la app), cancelamos el fallback
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "hidden") {
+      clearTimeout(fallback);
+    }
+  }, { once: true });
 }
 </script>
     
