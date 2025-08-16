@@ -2,6 +2,7 @@
   "name": "Salem TV",
   "short_name": "STV",
   "start_url": "index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#6a5acd",
   "theme_color": "#6a5acd",
