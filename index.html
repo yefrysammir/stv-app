@@ -200,6 +200,9 @@ padding: 10px;
 border-radius: 8px;
 text-align: center;
 font-size: 0.9rem;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 .anuncio img.profile {
     width: 15px;
@@ -217,7 +220,7 @@ font-size: 0.9rem;
   <main>
     <div class="iframe-container">
       <div class="loader" id="loader"><span></span></div>
-      <iframe id="videoIframe" allow="picture-in-picture" playsinline allowfullscreen></iframe>
+      <iframe id="videoIframe" allow="picture-in-picture" playsinline webkit-playsinline allowfullscreen></iframe>
     </div>
 
     <div class="controls">
