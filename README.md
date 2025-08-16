@@ -1,2 +1,0 @@
-# stv-app
-Salem TV
